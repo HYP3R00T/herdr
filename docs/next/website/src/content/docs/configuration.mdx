@@ -13,6 +13,12 @@ Herdr reads config from:
 ~/.config/herdr/config.toml
 ```
 
+In Windows, Herdr reads config from:
+
+```text
+$env:APPDATA\herdr\config.toml
+```
+
 Print the full default config:
 
 ```bash
@@ -23,6 +29,12 @@ Save it as your config if you want a complete starting point:
 
 ```bash
 herdr --default-config > ~/.config/herdr/config.toml
+```
+
+In Windows:
+
+```bash
+herdr --default-config | Out-File -Encoding utf8 "$env:APPDATA\herdr\config.toml"
 ```
 
 If a config value is invalid, Herdr falls back to a safe default and shows a startup warning.
